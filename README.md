@@ -1,3 +1,7 @@
+this readme currently holds my journey for building a social media app. and i use it to maintain 
+a track on my progress so you can totally ignore it for now ! :)
+
+
 # project updates
 
 we have loaded our database url inside of app/core/config.py , using dotenv loader

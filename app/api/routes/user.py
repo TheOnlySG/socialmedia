@@ -1,7 +1,7 @@
 from fastapi import APIRouter , Depends
 from app.db.database import  get_db
 from app.db.models.user import User
-from app.schemas.user import UserCreate
+from app.schemas.user import UserCreate , UserResponse
 from sqlalchemy.orm import Session
 
 from app.core.security import hash_password
@@ -21,7 +21,7 @@ router = apirouter() thingy
 
 router = APIRouter()
 
-@router.post('/signup')
+@router.post('/signup' ,response_model=UserResponse)  #notice we added response model as userresponse here
 def user_sign_up(
     person : UserCreate, #putting pydantic schema into person so we validate before the value is even passed to api
     db : Session = Depends(get_db) # basically fastapi is creating a sessionlocal while the function starts , and would probably close the session after the function ends or returns value
@@ -51,4 +51,9 @@ def user_sign_up(
     #the half way,
 
 
-    return 'sample layout'
+    #we gotto return the user right , so the object may not contain it as it is passed to orm model
+    #thus we gotto refresh the db
+    db.refresh(new_user)
+
+
+    return new_user  #now to return this , fastapi will convert orm to json and send the new_user data

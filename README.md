@@ -93,3 +93,13 @@ why, what , where for migration)
 we would be using alembic for doing so btw. 
 **BUT**
 not now , for now i am simply dropping table from postgres manually.
+
+UPDATE - faced an issue with bcrypt lib , was version issue , degraded the version a lil
+well i guess we gotto use containerize this thing once complete , not thinking of it now.
+
+anyways , now , what apis return ? they return jsons or other data formated things which we use for
+frontend later , but rn our route is returning some string, lets change it , and give it a format
+
+well we used pydantic to validate right , the UserCreate model , now we create somethinglike a 
+UserResponse thingy , and we will return an objejct of that from api. thus frontend wont be able
+to access any of our password hashes or important things we needed

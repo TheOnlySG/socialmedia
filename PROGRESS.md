@@ -157,4 +157,21 @@ now , i have also imnplementd a verification function in security whigch verifie
 we will use that when we recieve token from frontend, if it verifies successfully then we proceed
 
 now , where do we find  jwt ? we will find it in url header of the page , to take that ill
-probably use inbuilt fastapis oauth2passwordberer
+probably use inbuilt fastapis httpbearer
+
+alr authentication chapter ended
+
+we heading towards social media features now
+now our backend already knows "who is performing this action"
+
+next feature : posts
+we need user->createpost
+
+before building , what should a post contain ? 
+1. id (post id)
+2. content
+3. created_at
+4. user_id (as post belongs to user) 
+
+its a one to many or 1:n relationship , and we gonna build that using orm
+soo yeah , this posts.user_id is foreignkey to users.user_id

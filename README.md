@@ -10,6 +10,9 @@ The platform provides authentication, social interactions, personalized feeds,
 and real-time communication through WebSockets.
 </p>
 
+Launch Live Deployment - https://extrovert.onrender.com/  
+Hosted on Render free tier — cold starts after inactivity may take 30–60 seconds.
+
 <hr>
 
 <h2>Features</h2>
@@ -204,19 +207,6 @@ Windows
 <p align="center">
   <img src="assets/Extrovert(1).png" width="100%">
 </p>
-
-<hr>
-
-<h2>Project Goals</h2>
-
-<ul>
-<li>Backend-first architecture</li>
-<li>Production-ready API design</li>
-<li>Secure authentication and authorization</li>
-<li>Real-time communication</li>
-<li>Scalable database design</li>
-<li>Containerized deployment workflow</li>
-</ul>
 
 <hr>
 
